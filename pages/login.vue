@@ -8,8 +8,7 @@
         </v-card-title>
         <v-card-text>
           <v-form>
-            <v-text-field label="Username" prepend-icon="account_circle" />
-            <v-text-field
+            <v-text-field label="Username" prepend-icon="account_circle" /><v-text-field
               :type="showPassword ? 'text' : 'password'"
               label="Password"
               prepend-icon="mdi-lock"
@@ -19,9 +18,11 @@
           </v-form>
         </v-card-text>
         <v-card-actions>
-          <v-btn color="warning">
+           <nuxt-link to="register">
+             <v-btn color="warning">
             Register
           </v-btn>
+           </nuxt-link>
           <v-spacer />
           <v-btn color="success">
             Login
