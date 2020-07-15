@@ -10,7 +10,7 @@
           <v-form>
             <v-text-field label="Name & Lastname" prepend-icon="accessibility" />
             <v-text-field label="Username" prepend-icon="account_circle" />
-            <v-text-field label="Password" prepend-icon="lock" />
+            <v-text-field type="password" label="Password" prepend-icon="lock" />
             <v-text-field label="E-mail" prepend-icon="contact_mail" />
             <v-text-field type="date" label="Birthday" prepend-icon="album" />
           </v-form>
