@@ -12,7 +12,7 @@
             <v-text-field label="Username" prepend-icon="account_circle" />
             <v-text-field label="Password" prepend-icon="lock" />
             <v-text-field label="E-mail" prepend-icon="contact_mail" />
-            <v-text-field label="Birthday" prepend-icon="album" />
+            <v-text-field type="date" label="Birthday" prepend-icon="album" />
           </v-form>
         </v-card-text>
         <v-card-actions>
