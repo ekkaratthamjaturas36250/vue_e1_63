@@ -1,54 +1,83 @@
 <template>
-  <v-app dark>
-    <v-navigation-drawer
+    <!-- App.vue -->
+
+<v-app>
+  <v-app-bar app :collapse="!collapseOnScroll"
+      :collapse-on-scroll="collapseOnScroll"
+      absolute
+      scroll-target="#scrolling-techniques-6">
+    
+    <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+
+      <v-toolbar-title>Chaiyaphum Technical College</v-toolbar-title>
+
+      <v-spacer></v-spacer>
+
+      <v-checkbox
+        v-model="collapseOnScroll"
+        color="white"
+        hide-details
+      ></v-checkbox>
+
+  </v-app-bar>
+
+  <v-navigation-drawer
       v-model="drawer"
-      app
-      clipped
+      absolute
+      temporary
     >
-      <lang-selector />
+      <v-list
+        nav
+        dense
+      >
+        <v-list-item-group
+          v-model="group"
+          active-class="deep-purple--text text--accent-4"
+        >
+          <nuxt-link to="/">
+          <v-list-item>
+            <v-list-item-icon>
+            <v-icon>mdi-home</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Home</v-list-item-title>
+          </v-list-item>
+          </nuxt-link>
+
+         <nuxt-link to="login">
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-account</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Login</v-list-item-title>
+          </v-list-item>
+           </nuxt-link>
+
+        </v-list-item-group>
+      </v-list>
     </v-navigation-drawer>
+  </v-card>
 
-    <v-app-bar
-      app
-      clipped-left
-      dense
-      dark
-    >
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title class="mr-12 align-center">
-        <span class="title">CCOLLEGE</span>
-      </v-toolbar-title>
-    </v-app-bar>
+  <!-- Sizes your content based upon application components -->
+  <v-main>
 
-    <v-content>
-      <nuxt />
-    </v-content>
-  </v-app>
+    <!-- Provides the application the proper gutter -->
+    <v-container fluid>
+      <!-- If using vue-router -->
+      <router-view></router-view>
+    </v-container>
+  </v-main>
+
+  <v-footer app>
+    <!-- -->
+  </v-footer>
+</v-app>
 </template>
 
 <script>
-import LangSelector from '~/components/lang-selector.vue'
-
-export default {
-  components: {
-    LangSelector,
-  },
-
-  computed: {
-    drawer: {
-      get() {
-        return this.$store.state.drawer
-      },
-      set(v) {
-        this.$store.commit('setDrawer', v)
-      },
-    },
-  }, // computed
-
-  watch: {
-    '$store.state.lang'() {
-      this.$i18n.locale = this.$store.state.lang
-    },
-  }, // watch
-}
+  export default {
+    data: () => ({
+      drawer: false,
+      collapseOnScroll: true,
+    }),
+  }
 </script>
