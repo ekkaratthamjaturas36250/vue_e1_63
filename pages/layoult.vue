@@ -1,22 +1,14 @@
 <template>
-  <!-- App.vue -->
+ <!-- App.vue -->
 
 <v-app>
   <v-navigation-drawer app>
     <!-- -->
   </v-navigation-drawer>
 
-  <v-app-bar app color="deep-purple accent-4"
-      dense
-      dark>
+  <v-app-bar app>
     <!-- -->
-    <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title>Page title</v-toolbar-title>
-
-      <v-spacer></v-spacer>
   </v-app-bar>
-  
 
   <!-- Sizes your content based upon application components -->
   <v-main>

@@ -30,10 +30,6 @@
         nav
         dense
       >
-        <v-list-item-group
-          v-model="group"
-          active-class="deep-purple--text text--accent-4"
-        >
           <nuxt-link to="/">
           <v-list-item>
             <v-list-item-icon>
