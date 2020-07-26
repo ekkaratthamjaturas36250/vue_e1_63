@@ -57,6 +57,14 @@
          <v-btn icon> <v-icon size="24px">{{ icon }}</v-icon> </v-btn>
          
         </v-btn>
+        <nuxt-link to="login">
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-logout</v-icon>
+            </v-list-item-icon>
+          </v-list-item>
+           </nuxt-link>
+
       </v-card-title>
     </v-card>
   </v-footer>
@@ -70,8 +78,7 @@
        icons: [
         'mdi-account',
         'mdi-home',
-         'mdi-wrench',
-        'mdi-logout',
+        'mdi-wrench',
       ],
     }
   }
